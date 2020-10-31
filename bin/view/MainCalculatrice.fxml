@@ -13,7 +13,7 @@
    <children>
       <VBox prefHeight="507.0" prefWidth="400.0">
          <children>
-            <TextField alignment="TOP_RIGHT" editable="false" prefHeight="90.0" prefWidth="400.0">
+            <TextField fx:id="display" alignment="TOP_RIGHT" editable="false" prefHeight="90.0" prefWidth="400.0">
                <font>
                   <Font size="48.0" />
                </font></TextField>
@@ -31,7 +31,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button fx:id="button7" mnemonicParsing="false" prefHeight="153.0" prefWidth="100.0" text="7" />
                   <Button fx:id="button4" mnemonicParsing="false" onAction="#handleActionButton" prefHeight="153.0" prefWidth="100.0" text="4" GridPane.rowIndex="1">
                      <font>
                         <Font size="36.0" />
@@ -52,7 +51,7 @@
                      <font>
                         <Font size="36.0" />
                      </font></Button>
-                  <Button fx:id="percentageButton" mnemonicParsing="false" onAction="#handleActionButton" prefHeight="153.0" prefWidth="100.0" text="\%" GridPane.columnIndex="3">
+                  <Button fx:id="multipleButton" mnemonicParsing="false" onAction="#handleActionButton" prefHeight="153.0" prefWidth="100.0" text="X" GridPane.columnIndex="3">
                      <font>
                         <Font size="36.0" />
                      </font></Button>
@@ -88,7 +87,7 @@
                      <font>
                         <Font size="36.0" />
                      </font></Button>
-                  <Button fx:id="button21" mnemonicParsing="false" onAction="#handleActionButton" prefHeight="153.0" prefWidth="100.0" text="7">
+                  <Button fx:id="button7" mnemonicParsing="false" onAction="#handleActionButton" prefHeight="153.0" prefWidth="100.0" text="7">
                      <font>
                         <Font size="36.0" />
                      </font>
