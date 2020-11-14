@@ -53,6 +53,7 @@ public class MainCalculatriceFxml implements Initializable{
 	private int operate = -1;
 	private float result;
 	private float firstNumber;
+	private boolean raz = false;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
@@ -62,48 +63,93 @@ public class MainCalculatriceFxml implements Initializable{
 	
 	@FXML
 	void handleActionButton(ActionEvent event) {
+		
 		if(event.getSource() == clearButton) {
 			display.setText("");
 		}else
 		if(event.getSource() == comaButton) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + ".");
 		}else
 		if(event.getSource() == button0) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "0");
 		}else
 		if(event.getSource() == button1) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "1");
 		}else
 		
 		if(event.getSource() == button2) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "2");
 		}else
 		
 		if(event.getSource() == button3) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "3");
 		}else
 		
 		if(event.getSource() == button4) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "4");
 		}else
 		
 		if(event.getSource() == button5) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "5");
 		}else
 		
 		if(event.getSource() == button6) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "6");
 		}else
 		
 		if(event.getSource() == button7) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "7");
 		}else
 		
 		if(event.getSource() == button8) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "8");
 		}else
 		
 		if(event.getSource() == button9) {
+			if(raz){
+				raz = false;
+				display.setText("");
+			}
 			display.setText(display.getText() + "9");
 		}else
 		
@@ -132,7 +178,7 @@ public class MainCalculatriceFxml implements Initializable{
 			display.setText("");
 		}else if(event.getSource() == equalButton) {
 			float secondNumber = Float.parseFloat(display.getText());
-			
+			raz = true;
 			switch(operate) {
 			case 1:
 				result = firstNumber + secondNumber;
@@ -140,15 +186,15 @@ public class MainCalculatriceFxml implements Initializable{
 				break;
 			case 2:
 				result = firstNumber - secondNumber;
-				display.setText(String.valueOf(result));
+				display.setText(displayResultWithOutComa(result));
 				break;
 			case 3:
 				result = firstNumber * secondNumber;
-				display.setText(String.valueOf(result));
+				display.setText(displayResultWithOutComa(result));
 				break;
 			case 4:
 				result = firstNumber / secondNumber;
-				display.setText(String.valueOf(result));
+				display.setText(displayResultWithOutComa(result));
 				break;
 			}
 			
