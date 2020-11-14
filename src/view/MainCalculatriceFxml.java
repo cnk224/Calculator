@@ -45,6 +45,9 @@ public class MainCalculatriceFxml implements Initializable{
 	private Button equalButton;
 	
 	@FXML
+	private Button clearButton;
+	
+	@FXML
 	private TextField display;
 	
 	private int operate = -1;
@@ -59,7 +62,12 @@ public class MainCalculatriceFxml implements Initializable{
 	
 	@FXML
 	void handleActionButton(ActionEvent event) {
-		
+		if(event.getSource() == clearButton) {
+			display.setText("");
+		}else
+		if(event.getSource() == comaButton) {
+			display.setText(display.getText() + ".");
+		}else
 		if(event.getSource() == button0) {
 			display.setText(display.getText() + "0");
 		}else
@@ -129,22 +137,18 @@ public class MainCalculatriceFxml implements Initializable{
 			case 1:
 				result = firstNumber + secondNumber;
 				display.setText(String.valueOf(result));
-				System.out.println("firstNumber: "+firstNumber);
 				break;
 			case 2:
-				result = firstNumber + secondNumber;
+				result = firstNumber - secondNumber;
 				display.setText(String.valueOf(result));
-				System.out.println("firstNumber: "+firstNumber);
 				break;
 			case 3:
 				result = firstNumber * secondNumber;
 				display.setText(String.valueOf(result));
-				System.out.println("firstNumber: "+firstNumber);
 				break;
 			case 4:
 				result = firstNumber / secondNumber;
 				display.setText(String.valueOf(result));
-				System.out.println("firstNumber: "+firstNumber);
 				break;
 			}
 			
