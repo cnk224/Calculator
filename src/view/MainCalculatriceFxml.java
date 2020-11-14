@@ -58,7 +58,7 @@ public class MainCalculatriceFxml implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
-	
+
 	
 	@FXML
 	void handleActionButton(ActionEvent event) {
@@ -136,7 +136,7 @@ public class MainCalculatriceFxml implements Initializable{
 			switch(operate) {
 			case 1:
 				result = firstNumber + secondNumber;
-				display.setText(String.valueOf(result));
+				display.setText(displayResultWithOutComa(result));
 				break;
 			case 2:
 				result = firstNumber - secondNumber;
@@ -155,6 +155,16 @@ public class MainCalculatriceFxml implements Initializable{
 			
 		}
 		
+	}
+	
+	public String displayResultWithOutComa(float result) {
+		String finalResult = "";
+		if(result % 1 == 0) {
+			finalResult = String.valueOf((int)result);
+		}else {
+			finalResult = String.valueOf(result);
+		}
+		return finalResult;
 	}
 	
 }
